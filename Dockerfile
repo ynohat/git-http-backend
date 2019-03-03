@@ -11,12 +11,12 @@ EXPOSE 80
 VOLUME ["/git"]
 
 # We need the following:
-# - git, because that gets us the git-http-backend CGI script
+# - git-daemon, because that gets us the git-http-backend CGI script
 # - fcgiwrap, because that is how nginx does CGI
 # - spawn-fcgi, to launch fcgiwrap and to create the unix socket
 # - nginx, because it is our frontend
 RUN apk add --update nginx && \
-    apk add --update git && \
+    apk add --update git-daemon && \
     apk add --update fcgiwrap && \
     apk add --update spawn-fcgi && \
     rm -rf /var/cache/apk/*
