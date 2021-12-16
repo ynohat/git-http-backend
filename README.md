@@ -16,3 +16,5 @@ git init --bare test.git
 cd test.git
 git config http.receivepack true
 ```
+
+Repos will then be accessible at `http://localhost:4080/git/<repo>.git`.
